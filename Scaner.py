@@ -1,6 +1,10 @@
+#TODO دیاگرام حالت
+
+import re
+
 class SymbolTable:
     def __init__(self):
-        self.size = 100
+        self.size = 30
         self.table = [None] * self.size
 
     def _hash(self, key):
@@ -22,12 +26,19 @@ class SymbolTable:
         return None
 
 
-keywords = [("id","write"), ("id","read"), ("id","loop"), ("id","until"), ("id","if"), ("id","so"), ("OpPr", "("), ("ClPr", ")"), ("SC",";"),
-            ("OpBr", "["), ("ClBr", "]"), ("mod", "%"), ("division","/"), ("sub","-"), ("sum", "+"), ("star","*"), ("equal","=="), ("assignment", "=")]
 
-symbol_table = SymbolTable()
+class Scanner:
+    def __init__(self):
+        return
 
-for key, value in keywords:
-    symbol_table.insert(key, value)
 
-print(symbol_table.table)
+
+keywords = [("id",r"write"), ("id",r'read'), ("id",r"loop"), ("id",r"until"), ("id",r"if"), ("id",r"so"), ("OpPr", r'('), ("ClPr", r")"), ("SC",r";"),
+            ("OpBr", r"["), ("ClBr", r"]"), ("mod", r"%"), ("division",r"/"), ("sub",r"-"), ("sum", r"+"), ("star",r"*"), ("equal",r"=="), ("assignment", r"=")]
+
+# symbol_table = SymbolTable()
+
+# for key, value in keywords:
+#     symbol_table.insert(key, value)
+
+# print(symbol_table.table)
