@@ -45,10 +45,12 @@ class Scanner:
                 output += formatted_result
             elif token.isalpha():
                 self.symbol_table.insert('id', token)
-                output.join(f'{self.symbol_table.lookup(token)}')
+                formatted_result = f'{self.symbol_table.lookup(token)}'
+                output+= formatted_result
             elif token.isdigit():
                 self.symbol_table.insert('num', token)
-                output.join(f'{self.symbol_table.lookup(token)}')
+                formatted_result = f'{self.symbol_table.lookup(token)}'
+                output+= formatted_result
             else:
                 None
         return output
