@@ -46,11 +46,11 @@ class Scanner:
             elif token.isalpha():
                 self.symbol_table.insert('id', token)
                 formatted_result = f'{self.symbol_table.lookup(token)}'
-                output+= formatted_result
+                output += formatted_result
             elif token.isdigit():
                 self.symbol_table.insert('num', token)
                 formatted_result = f'{self.symbol_table.lookup(token)}'
-                output+= formatted_result
+                output += formatted_result
             else:
                 None
         return output
@@ -58,7 +58,8 @@ class Scanner:
 
 def main():
     keywords = [("write",r"write"), ("read",r'read'), ("loop",r"loop"), ("until",r"until"), ("if",r"if"), ("so",r"so"), ("OpPr", r'('), ("ClPr", r")"), ("SC",r";"),
-                ("OpBr", r"["), ("ClBr", r"]"), ("mod", r"%"), ("division",r"/"), ("sub",r"-"), ("sum", r"+"), ("star",r"*"), ("equal",r"=="), ("assignment", r"=")]
+                ("OpBr", r"["), ("ClBr", r"]"), ("mod", r"%"), ("division",r"/"), ("sub",r"-"), ("sum", r"+"), ("star",r"*"), ("equal",r"=="), ("assignment", r"="),
+                ("cout", r"<<"), ("cin", r">>"), ("int", r"int"), ("float", r"float"), ("double", r"double"), ("bool", r"bool"), ("true", r"true"), ("false", r"false")]
 
     symbol_table = SymbolTable()
     for key, value in keywords:
